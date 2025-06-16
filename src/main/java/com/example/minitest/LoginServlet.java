@@ -17,6 +17,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 public class LoginServlet extends GenericServlet {
 	private static final long serialVersionUID = 1L;
 
+	private String jwtexample = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
 
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
@@ -46,6 +47,7 @@ public class LoginServlet extends GenericServlet {
 	        while (rs.next()) {
 	        	result.append("<li>" + rs.getInt(1)+ " " + rs.getString(2) + " " + rs.getString(3)+ " " + rs.getString(4)+ " " + rs.getString(5) + "</li>");
 	        }
+	        	result.append("<li>" + jwtexample + "</li>");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
